@@ -8,6 +8,10 @@
 package frc.robot;
 
 import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.buttons.Button;
+import edu.wpi.first.wpilibj.buttons.JoystickButton;
+import frc.robot.commands.CargoInCommand;
+import frc.robot.commands.CargoOutCommand;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -20,6 +24,11 @@ public class OI {
   // You create one by telling it which joystick it's on and which button
   // number it is.
   public Joystick driveStick = new Joystick(RobotMap.driveJoystickPort);
+  public Button cargoInButton = new JoystickButton(driveStick, 3);
+  public Button cargoOutButton = new JoystickButton(driveStick, 4);
+  
+  
+  
   public Joystick liftStick = new Joystick(RobotMap.liftJoystickPort);
   // Button button = new JoystickButton(stick, buttonNumber);
 
@@ -34,6 +43,13 @@ public class OI {
   // Start the command when the button is pressed and let it run the command
   // until it is finished as determined by it's isFinished method.
   // button.whenPressed(new ExampleCommand());
+  public OI(){
+    cargoInButton.whileHeld(new CargoInCommand());
+    cargoOutButton.whileHeld(new CargoOutCommand());
+
+  }
+  
+
 
   // Run the command while the button is being held down and interrupt it once
   // the button is released.

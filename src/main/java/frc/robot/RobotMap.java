@@ -37,4 +37,9 @@ public class RobotMap {
   public static int liftSlavePort = 6;
   public static int cargoMotorPort = 7;
 
+  //PCM Ports
+  public static int hatchPushPort = 0;
+  public static int arrowUpPort = 1;
+  public static int arrowDownPort = 1;
+
 }

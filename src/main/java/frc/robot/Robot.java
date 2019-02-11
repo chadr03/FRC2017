@@ -11,8 +11,9 @@ import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import frc.robot.subsystems.CargoSubsystem;
 import frc.robot.subsystems.DriveSubsystem;
+import frc.robot.subsystems.HatchSubsystem;
 import frc.robot.subsystems.LiftSubsystem;
 
 
@@ -27,6 +28,8 @@ public class Robot extends TimedRobot {
   
   public static DriveSubsystem driveSubsystem = new DriveSubsystem();
   public static LiftSubsystem liftSubsystem = new LiftSubsystem();
+  public static HatchSubsystem hatchSubsystem = new HatchSubsystem();
+  public static CargoSubsystem cargoSubsystem = new CargoSubsystem();
   public static OI oi;
 
   Command autonomousCommand;
