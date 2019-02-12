@@ -40,6 +40,6 @@ public class RobotMap {
   //PCM Ports
   public static int hatchPushPort = 0;
   public static int arrowUpPort = 1;
-  public static int arrowDownPort = 1;
+  public static int arrowDownPort = 2;
 
 }
