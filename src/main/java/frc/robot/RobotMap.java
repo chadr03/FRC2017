@@ -29,17 +29,17 @@ public class RobotMap {
   public static int liftJoystickPort = 1;
 
   //CAN Ports
-  public static int leftMasterPort = 1;
-  public static int leftSlavePort = 2;
-  public static int rightMasterPort = 3;
-  public static int rightSlavePort = 4;
-  public static int liftMasterPort = 5;
-  public static int liftSlavePort = 6;
-  public static int cargoMotorPort = 7;
+  public static int leftMasterPort = 4;
+  public static int leftSlavePort = 1;
+  public static int rightMasterPort = 6;
+  public static int rightSlavePort = 3;
+  public static int liftMasterPort = 7;
+  public static int liftSlavePort = 2;
+  public static int cargoMotorPort = 5;
 
   //PCM Ports
-  public static int hatchPushPort = 0;
-  public static int arrowUpPort = 1;
-  public static int arrowDownPort = 2;
+  public static int hatchPushPort = 6;
+  public static int arrowUpPort = 0;
+  public static int arrowDownPort = 7;
 
 }

@@ -25,7 +25,7 @@ public class ManualLiftCommand extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    double speed = -Robot.oi.liftStick.getY();
+    double speed = Robot.oi.liftStick.getY();
     Robot.liftSubsystem.manualLift(speed);
     
   }
