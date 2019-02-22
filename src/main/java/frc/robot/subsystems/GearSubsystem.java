@@ -50,6 +50,11 @@ public class GearSubsystem extends Subsystem {
     intakeRight.set(DoubleSolenoid.Value.kReverse);
   }
 
+  public void intakeHold(){
+    intakeLeft.set(DoubleSolenoid.Value.kOff);
+    intakeRight.set(DoubleSolenoid.Value.kOff);
+  }
+
   public void gearBoxUp(){
     gearBoxLeft.set(DoubleSolenoid.Value.kForward);
     gearBoxRight.set(DoubleSolenoid.Value.kForward);
@@ -58,6 +63,12 @@ public class GearSubsystem extends Subsystem {
   public void gearBoxDown(){
     gearBoxLeft.set(DoubleSolenoid.Value.kReverse);
     gearBoxRight.set(DoubleSolenoid.Value.kReverse);
+  }
+
+  public void gearBoxHold(){
+    gearBoxLeft.set(DoubleSolenoid.Value.kOff);
+    gearBoxRight.set(DoubleSolenoid.Value.kOff);
+
   }
 
   @Override
