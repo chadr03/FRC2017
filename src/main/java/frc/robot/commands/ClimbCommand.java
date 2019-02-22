@@ -10,11 +10,11 @@ package frc.robot.commands;
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
 
-public class ManualLiftCommand extends Command {
-  public ManualLiftCommand() {
+public class ClimbCommand extends Command {
+  public ClimbCommand() {
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
-    requires(Robot.liftSubsystem);
+    requires(Robot.climbSubsystem);
   }
 
   // Called just before this Command runs the first time
@@ -25,9 +25,8 @@ public class ManualLiftCommand extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    double speed = Robot.oi.liftStick.getY();
-    Robot.liftSubsystem.manualLift(speed);
-    
+    double move = Math.abs(Robot.oi.driveStick.getX());
+    Robot.climbSubsystem.manualClimb(move);
   }
 
   // Make this return true when this Command no longer needs to run execute()

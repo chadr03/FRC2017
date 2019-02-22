@@ -7,39 +7,43 @@
 
 package frc.robot.subsystems;
 
-import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
-import com.ctre.phoenix.motorcontrol.can.WPI_VictorSPX;
 
+import edu.wpi.first.wpilibj.Spark;
+import edu.wpi.first.wpilibj.SpeedControllerGroup;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.robot.RobotMap;
-import frc.robot.commands.ManualLiftCommand;
+import frc.robot.commands.ClimbCommand;
+
 
 /**
  * Add your docs here.
  */
-public class LiftSubsystem extends Subsystem {
+public class ClimbSubsystem extends Subsystem {
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
 
-  WPI_TalonSRX liftMaster = new WPI_TalonSRX(RobotMap.liftMasterPort);
-  WPI_VictorSPX liftSlave = new WPI_VictorSPX(RobotMap.liftSlavePort);
+
+  Spark climbLeftMotor = new Spark(RobotMap.climbLeftPort);
+  Spark climbRightMotor = new Spark(RobotMap.climbRightPort);
+  SpeedControllerGroup climbMotors = new SpeedControllerGroup(climbLeftMotor, climbRightMotor);
+  
 
 
 
 
-  public LiftSubsystem() {
-		liftSlave.follow(liftMaster);
+  public ClimbSubsystem() {
+		climbRightMotor.setInverted(true);
 	
   }
 
-  public void manualLift(double speed) {
-    liftMaster.set(speed);
+  public void manualClimb(double speed) {
+    climbMotors.set(speed);
   }
 
   @Override
   public void initDefaultCommand() {
     // Set the default command for a subsystem here.
-    // setDefaultCommand(new MySpecialCommand());
-    setDefaultCommand(new ManualLiftCommand());
+    setDefaultCommand(new ClimbCommand());
+    
   }
 }

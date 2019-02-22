@@ -26,7 +26,7 @@ public class TeleopDriveCommand extends Command {
   @Override
   protected void execute() {
     double move = -Robot.oi.driveStick.getY();
-    double turn = Robot.oi.driveStick.getX();
+    double turn = Robot.oi.driveStick.getTwist();
     Robot.driveSubsystem.teleopDrive(move, turn);
   }
 

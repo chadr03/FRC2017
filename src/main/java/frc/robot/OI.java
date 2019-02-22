@@ -10,8 +10,7 @@ package frc.robot;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
-import frc.robot.commands.CargoInCommand;
-import frc.robot.commands.CargoOutCommand;
+
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -44,8 +43,8 @@ public class OI {
   // until it is finished as determined by it's isFinished method.
   // button.whenPressed(new ExampleCommand());
   public OI(){
-    cargoInButton.whileHeld(new CargoInCommand());
-    cargoOutButton.whileHeld(new CargoOutCommand());
+    //cargoInButton.whileHeld(new CargoInCommand());
+    //cargoOutButton.whileHeld(new CargoOutCommand());
 
   }
   

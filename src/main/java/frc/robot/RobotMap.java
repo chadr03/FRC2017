@@ -37,9 +37,24 @@ public class RobotMap {
   public static int liftSlavePort = 2;
   public static int cargoMotorPort = 5;
 
+  //PWM Ports
+  public static int left1Port = 2; //2
+  public static int left2Port = 3; //3
+  public static int right1Port = 0; //0
+  public static int right2Port = 1; //1
+  public static int climbLeftPort = 4; //4 needs +1
+  public static int climbRightPort = 7; //7 needs +1
+  public static int bottomIntakeMotorPort = 5; //5 +1 sucks
+  public static int topIntakeMotorPort = 6; //6 -1 sucks
+
   //PCM Ports
-  public static int hatchPushPort = 6;
-  public static int arrowUpPort = 0;
-  public static int arrowDownPort = 7;
+  public static int intakeLeftUp = 0;
+  public static int intakeLeftDown = 1;
+  public static int intakeRightUp = 2;
+  public static int intakeRightDown = 3;
+  public static int gearBoxLeftUp = 4;
+  public static int gearBoxLeftDown = 5;
+  public static int gearBoxRightUp = 6;
+  public static int gearBoxRightDown = 7;
 
 }
