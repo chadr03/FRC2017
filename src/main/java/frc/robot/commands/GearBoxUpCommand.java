@@ -37,7 +37,7 @@ public class GearBoxUpCommand extends Command {
   // Called once after isFinished returns true
   @Override
   protected void end() {
-    Robot.gearSubsystem.gearBoxHold();
+    //Robot.gearSubsystem.gearBoxHold();
   }
 
   // Called when another command which requires one or more of the same

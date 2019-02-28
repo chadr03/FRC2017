@@ -10,6 +10,9 @@ package frc.robot;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import frc.robot.commands.*;
+
 
 
 /**
@@ -23,12 +26,14 @@ public class OI {
   // You create one by telling it which joystick it's on and which button
   // number it is.
   public Joystick driveStick = new Joystick(RobotMap.driveJoystickPort);
-  public Button cargoInButton = new JoystickButton(driveStick, 3);
-  public Button cargoOutButton = new JoystickButton(driveStick, 4);
+  public Button intakeUpButton = new JoystickButton(driveStick, 1);
+  public Button intakeDownButton = new JoystickButton(driveStick, 2);
+  public Button gearBoxUpButton = new JoystickButton(driveStick, 4);
+  public Button gearBoxDownButton = new JoystickButton(driveStick, 3);
   
   
   
-  public Joystick liftStick = new Joystick(RobotMap.liftJoystickPort);
+  //public Joystick liftStick = new Joystick(RobotMap.liftJoystickPort);
   // Button button = new JoystickButton(stick, buttonNumber);
 
   // There are a few additional built in buttons you can use. Additionally,
@@ -43,7 +48,13 @@ public class OI {
   // until it is finished as determined by it's isFinished method.
   // button.whenPressed(new ExampleCommand());
   public OI(){
-    //cargoInButton.whileHeld(new CargoInCommand());
+    intakeUpButton.whenPressed(new IntakeUpCommand());
+    intakeDownButton.whenPressed(new IntakeDownCommand());
+    gearBoxUpButton.whenPressed(new GearBoxUpCommand());
+    gearBoxDownButton.whenPressed(new GearBoxDownCommand());
+    SmartDashboard.putData("Intake Up", new IntakeUpCommand());
+    SmartDashboard.putData("Intake Down", new IntakeDownCommand());
+    
     //cargoOutButton.whileHeld(new CargoOutCommand());
 
   }

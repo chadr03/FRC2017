@@ -7,10 +7,12 @@
 
 package frc.robot;
 
+import edu.wpi.first.wpilibj.PowerDistributionPanel;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.subsystems.GearSubsystem;
 import frc.robot.subsystems.DriveSubsystem;
 import frc.robot.subsystems.ClimbSubsystem;
@@ -29,6 +31,7 @@ public class Robot extends TimedRobot {
   public static ClimbSubsystem climbSubsystem = new ClimbSubsystem();
   public static GearSubsystem gearSubsystem = new GearSubsystem();
   public static OI oi;
+  //PowerDistributionPanel pdp = new PowerDistributionPanel(0);
 
   Command autonomousCommand;
   SendableChooser<Command> chooser = new SendableChooser<>();
@@ -55,7 +58,7 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void robotPeriodic() {
-    
+    SmartDashboard.putNumber("Distance (in)", Robot.driveSubsystem.getDistance());
   }
 
   /**

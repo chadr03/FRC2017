@@ -7,10 +7,13 @@
 
 package frc.robot.subsystems;
 
+import edu.wpi.first.wpilibj.PowerDistributionPanel;
 import edu.wpi.first.wpilibj.Spark;
 import edu.wpi.first.wpilibj.SpeedControllerGroup;
+import edu.wpi.first.wpilibj.Ultrasonic;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.RobotMap;
 import frc.robot.commands.TeleopDriveCommand;
 
@@ -34,6 +37,7 @@ public class DriveSubsystem extends Subsystem {
   Spark left2 = new Spark(RobotMap.left2Port);
   Spark right1 = new Spark(RobotMap.right1Port);
   Spark right2 = new Spark(RobotMap.right2Port);
+  PowerDistributionPanel pdp = new PowerDistributionPanel();
 
   SpeedControllerGroup leftMaster = new SpeedControllerGroup(left1, left2);
   SpeedControllerGroup rightMaster = new SpeedControllerGroup(right1, right2);
@@ -41,18 +45,28 @@ public class DriveSubsystem extends Subsystem {
 
   DifferentialDrive drive = new DifferentialDrive(leftMaster, rightMaster);
 
-  /** This is needed to make the VictorSPX follow the Talon SRX if using those speed controllers
+
+  Ultrasonic ut = new Ultrasonic(8, 9);
+
+  // This is needed to make the VictorSPX follow the Talon SRX if using those speed controllers
   public DriveSubsystem() {
-		leftSlave.follow(leftMaster);
-		rightSlave.follow(rightMaster);
+    ut.setAutomaticMode(true);
+
+	//	leftSlave.follow(leftMaster);
+	//	rightSlave.follow(rightMaster);
   }
-  */
+  //*/
 
 
   public void teleopDrive(double move, double turn) {
     drive.arcadeDrive(move, turn);
   }
 
+
+  public double getDistance(){
+    SmartDashboard.putNumber("Test", ut.getRangeMM());
+    return ut.getRangeInches();
+  }
   @Override
   public void initDefaultCommand() {
     // Set the default command for a subsystem here.

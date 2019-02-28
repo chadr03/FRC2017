@@ -26,16 +26,9 @@ public class RobotMap {
 
   //Joystick Ports
   public static int driveJoystickPort = 0;
-  public static int liftJoystickPort = 1;
 
-  //CAN Ports
-  public static int leftMasterPort = 4;
-  public static int leftSlavePort = 1;
-  public static int rightMasterPort = 6;
-  public static int rightSlavePort = 3;
-  public static int liftMasterPort = 7;
-  public static int liftSlavePort = 2;
-  public static int cargoMotorPort = 5;
+
+  
 
   //PWM Ports
   public static int left1Port = 2; //2
@@ -49,12 +42,12 @@ public class RobotMap {
 
   //PCM Ports
   public static int intakeLeftUp = 0;
-  public static int intakeLeftDown = 1;
-  public static int intakeRightUp = 2;
-  public static int intakeRightDown = 3;
-  public static int gearBoxLeftUp = 4;
-  public static int gearBoxLeftDown = 5;
-  public static int gearBoxRightUp = 6;
-  public static int gearBoxRightDown = 7;
+  public static int intakeLeftDown = 7;
+  public static int intakeRightUp = 3;
+  public static int intakeRightDown = 4;
+  public static int gearBoxLeftUp = 1;
+  public static int gearBoxLeftDown = 6;
+  public static int gearBoxRightUp = 2;
+  public static int gearBoxRightDown = 5;
 
 }

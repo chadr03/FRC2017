@@ -14,6 +14,7 @@ import edu.wpi.first.wpilibj.Spark;
 import edu.wpi.first.wpilibj.SpeedControllerGroup;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.robot.RobotMap;
+import frc.robot.commands.IntakeFeedCommand;
 
 /**
  * Add your docs here.  This is for a test to see if I can pull and old version......
@@ -75,5 +76,6 @@ public class GearSubsystem extends Subsystem {
   public void initDefaultCommand() {
     // Set the default command for a subsystem here.
     // setDefaultCommand(new MySpecialCommand());
+    setDefaultCommand(new IntakeFeedCommand());
   }
 }
